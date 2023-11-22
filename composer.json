@@ -1,0 +1,14 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Webmecanik/api-library"
+        }
+    ],
+    "require": {
+        "mautic/api-library": "dev-allow-optional-arguments-for-contact-create",
+        "guzzlehttp/guzzle": "^7.3",
+        "monolog/monolog": "^2.9",
+        "phpunit/phpunit": "^10.4"
+    }
+}
