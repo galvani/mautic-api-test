@@ -337,12 +337,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Webmecanik/api-library.git",
-                "reference": "5f2137af53e734281534eecfc87044b74b8c5d04"
+                "reference": "a40df184c80ecdb72eded6b57b0b90a57ff7995d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Webmecanik/api-library/zipball/5f2137af53e734281534eecfc87044b74b8c5d04",
-                "reference": "5f2137af53e734281534eecfc87044b74b8c5d04",
+                "url": "https://api.github.com/repos/Webmecanik/api-library/zipball/a40df184c80ecdb72eded6b57b0b90a57ff7995d",
+                "reference": "a40df184c80ecdb72eded6b57b0b90a57ff7995d",
                 "shasum": ""
             },
             "require": {
@@ -380,7 +380,7 @@
             "support": {
                 "source": "https://github.com/Webmecanik/api-library/tree/allow-optional-arguments-for-contact-create"
             },
-            "time": "2023-11-22T15:27:26+00:00"
+            "time": "2023-12-01T10:19:10+00:00"
         },
         {
             "name": "monolog/monolog",

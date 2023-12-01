@@ -13,12 +13,12 @@ $settings = [
     'version'      => 'OAuth2', // Version of the OAuth can be OAuth2 or OAuth1a. OAuth2 is the default value.
     'clientKey'    => '2_3pzekjxdhtuswwkcoow4wo48os04wow8sgo4k4og84ggcwo80k',       // Client/Consumer key from Mautic
     'clientSecret' => '5d6z47ps7xssgg0w08csokskskgs4oswc8s408w8gkgko04kk4',       // Client/Consumer secret key from Mautic
-    'accessToken'  => 'ODkzMTY4YmEwMDJkZTI5YTZmODg0N2RmOTcyYTUyNzU3MGUxOWY3ZDQ3YjhhN2NmNDg0MTEyZTNiOWZjOWU4Mw',       // Client/Consumer key from Mautic
+    'accessToken'  => 'N2E5ZTlmMjdkM2FjOGVjMDJjYTFjMTYxMzcyYmIwOTJhOTMxNjgxYjJhOTE3YjBmM2VmZWVkZjA3MDc4NTY4MA',       // Client/Consumer key from Mautic
 ];
 
 // Initiate the auth object specifying to use BasicAuth
 $initAuth = new ApiAuth();
-$auth     = $initAuth->newAuth($settings, 'TwoLeggedOAuth2');
+$auth     = $initAuth->newAuth($settings, 'OAuth');
 
 // Initiate an HTTP Client
 $httpClient = new Client(['timeout' => 10]);
@@ -31,26 +31,30 @@ $contactApi = $api->newApi('contacts', $auth, $settings['baseUrl'].'/api');
 $contactApi->setLogger($logger);
 echo "Creating contact...\n";
 
-$response = $contactApi->create(
-      [
-          'firstname'     => 'John',
-          'lastname'      => 'Doe',
-          'email'         => 'ggg.lan@ddd.cz',
-          "customObjects" => [
-              "data" => [
-                  [
-                      "id"   => 1,
-                      "data" => [
-                          ["name"       => "Hello From API2",
-                           "attributes" => [
-                               "updated" => "2018-10-10T14:00:00+02:00"
-                           ]
+$response = $contactApi->createBatch(
+    [
+        [
+            'overwriteWithBlank' => true,
+            'firstname'     => 'John',
+            'lastname'      => 'Doe',
+            'email'         => 'ggg.lan@ddd.cz',
+            "customObjects" => [
+                "data" => [
+                    [
+                        "id"   => 1,
+                        "data" => [
+                            ["name"       => "Hello From API2",
+                             "attributes" => [
+                                 "updated" => "2018-10-10T14:00:00+02:00"
+                             ]
 
-                          ]
-                      ]
-                  ]
-              ]
-          ]
-      ]
-    , ['includeCustomObjects' => true]);
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+);
 
+var_dump($response);
