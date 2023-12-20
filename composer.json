@@ -6,9 +6,10 @@
         }
     ],
     "require": {
-        "mautic/api-library": "dev-allow-optional-arguments-for-contact-create",
+        "mautic/api-library": "dev-master",
         "guzzlehttp/guzzle": "^7.3",
-        "monolog/monolog": "^2.9",
+        "monolog/monolog": "~2.0",
+	"psr/log": "~2.0",
         "phpunit/phpunit": "^10.4"
     }
 }
